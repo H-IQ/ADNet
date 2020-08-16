@@ -53,7 +53,7 @@ def main():
         # noisy image
         INoisy = ISource + noise
         ISource = Variable(ISource) 
-	    INoisy = Variable(INoisy) 
+    	INoisy = Variable(INoisy) 
         ISource= ISource.cuda() 
         INoisy = INoisy.cuda() 
         with torch.no_grad(): # this can save much memory
@@ -64,8 +64,8 @@ def main():
         psnr = batch_PSNR(Out, ISource, 1.)
         psnr_test += psnr
         print("%s PSNR %f" % (f, psnr))
-    psnr_test /= len(files_source)
-    print("\nPSNR on test data %f" % psnr_test)
+    	psnr_test /= len(files_source)
+    	print("\nPSNR on test data %f" % psnr_test)
 
 if __name__ == "__main__":
     main()
